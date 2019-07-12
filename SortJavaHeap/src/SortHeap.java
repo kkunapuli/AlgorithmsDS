@@ -21,14 +21,17 @@ public class SortHeap {
 		}
 		
 		//print results
+		System.out.println("Original array:");
 		myHeap.print();
 		
 		//heapify!
 		myHeap.heapify();
+		System.out.println("Heapified array:");
 		myHeap.print();
 		
 		//sort
 		myHeap.sort();
+		System.out.println("Sorted array:");
 		myHeap.print();
 	}
 
