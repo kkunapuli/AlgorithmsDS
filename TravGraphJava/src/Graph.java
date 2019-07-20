@@ -139,4 +139,16 @@ public class Graph {
 		
 		System.out.println("");
 	}
+	
+	void print() {
+		for(Node v: vertices) {
+			System.out.print(v.getName() + ": ");
+			v = v.next();
+			while(v != null){
+				System.out.print(v.getName() + ", ");
+				v = v.next();
+			}
+			System.out.println();
+		}
+	}
 }

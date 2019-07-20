@@ -20,7 +20,6 @@ public class TraverseGraph {
 		for(int i = 0; i < 10; i++) {
 			uGraph.addVertex(i);
 		}
-		//System.out.println(uGraph.size() + " nodes in graph.");
 		
 		//a2. add 15 edges
 		for(int i = 0; i < 5; i++){
@@ -28,7 +27,6 @@ public class TraverseGraph {
 			uGraph.addEdge(i, i+1);
 			uGraph.addEdge(i, i+2);
 		}
-		//System.out.println(uGraph.numEdges() + " edges in graph.");
 		
 		//b. do depth-first search
 		System.out.println("DFS of undirected graph:");
@@ -39,7 +37,6 @@ public class TraverseGraph {
 		for(int i = 0; i < 10; i++) {
 			dGraph.addVertex(i);
 		}
-		//System.out.println(dGraph.size() + " nodes in graph.");
 		
 		//a2. add 15 edges
 		for(int i = 0; i < 5; i++){
@@ -47,13 +44,24 @@ public class TraverseGraph {
 			dGraph.addEdge(i, i+1);
 			dGraph.addEdge(i, i+2);
 		}
-		//System.out.println(dGraph.numEdges() + " edges in graph.");
 		System.out.println("DFS of directed graph:");
 		dGraph.DFS(dGraph.getVertex(0));
 		
 		//d. make a disconnected undirected graph and repeat DFS TODO
+		Graph udGraph = new Graph(12, false);
+		for(int i = 0; i < 12; i++) {
+			udGraph.addVertex(i);
+		}
+		for(int i = 0; i < 6; i++) {
+			//only connect even with even and odd with odd
+			udGraph.addEdge(i, i+2);
+			udGraph.addEdge(i, i+4);
+			udGraph.addEdge(i, i+6);
+		}
 		
-		//2. BFS 
+		//2. DFS 
+		System.out.println("DFS of undirected, disconnected graph:");
+		udGraph.DFS(udGraph.getVertex(0));
 		
 		//b. BFS on undirected graph
 		System.out.println("BFS of undirected graph:");
@@ -64,9 +72,8 @@ public class TraverseGraph {
 		dGraph.BFS(dGraph.getVertex(0));
 		
 		//d. BFS on disconnected undirected graph TODO
-		
-		
-
+		System.out.println("BFS of undirected, disconnected graph:");
+		udGraph.DFS(udGraph.getVertex(1));
 	}
 
 }
