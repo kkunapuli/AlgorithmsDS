@@ -47,7 +47,9 @@ public class FindSPT {
 			if(p == -1) {
 				p = 0;
 			}
-			spt.addEdge(p, i, myGraph.dist[i]);
+			//spt.addEdge(p, i, myGraph.dist[i]);
+			//don't use dijkstra distance; use map distance
+			spt.addEdge(p, i, myGraph.edgeLen(p, i));
 		}
 		spt.print();
 

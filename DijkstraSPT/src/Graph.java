@@ -124,7 +124,7 @@ public class Graph { //represented by an adjacency matrix
 		for(int i = 0; i < max_elem; i++) {
 			System.out.print(i + "| ");
 			for(int j = 0; j < max_elem; j++) {
-				if(matrix[i][j] == 0.0) {
+				if(matrix[i][j] == 0.0 || matrix[i][j] == Double.POSITIVE_INFINITY) {
 					System.out.print("Inf ");
 				}
 				else {
